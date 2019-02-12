@@ -1,0 +1,39 @@
+TARGET:=shelve9
+
+WARN?=-Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy \
+	-Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op \
+	-Wmissing-include-dirs -Wnoexcept -Woverloaded-virtual \
+	-Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wundef \
+	-Wno-unused-parameter -Wreturn-type
+CXXFLAGS?=-g $(WARN) -std=c++17 \
+	-DVERSION=\"$(VERSION)\" \
+	-DBOOST_ALL_DYN_LINK \
+	$(shell pkg-config --cflags openssl pion yaml-cpp jsoncpp)
+CXXINCFLAGS?=-I.
+LDFLAGS?=-pthread -lboost_thread -lboost_log \
+	-lboost_log_setup -lboost_program_options \
+	-lboost_system -lboost_filesystem \
+	-llmdb \
+	$(shell pkg-config --libs openssl pion yaml-cpp jsoncpp)
+CXX?=g++
+
+VERSION:=$(shell git describe --long --tags --dirty --always --match 'v[0-9].*' || echo "unknown")
+OBJECTS=$(subst .cc,.o,$(shell ls *.cc))
+
+$(TARGET): $(OBJECTS) 
+	@echo "Linking $@..."
+	@$(CXX) -o $@ $^ $(LDFLAGS)
+
+%.o: %.cc
+	@echo "Compiling $<..."
+	@$(CXX) $(CXXFLAGS) $(CXXINCFLAGS) -c $< -o $@
+	@$(CXX) -MM -MT $@ $(CXXFLAGS) $(CXXINCFLAGS) -c $< > $*.d
+
+.PHONY: clean
+
+clean:
+	@echo "Cleaning..."
+	@rm -f *.o *.d
+	@rm -f $(TARGET)
+
+-include *.d
