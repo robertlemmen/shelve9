@@ -6,7 +6,7 @@ discussing and sharing books in our organisations.
 
 ## The Vision
 
-Towards the goal of fostering reading in a professional context, these ideas are
+Towards the goal of cultivating reading in a professional context, these ideas are
 especially relevant:
 
 ### Recommend Good Books
@@ -20,7 +20,7 @@ with your view or even more so if they do not.
 ### Make them come alive
 
 Books are much more than the text inside. Their weight and haptics make them
-a much more serious experience. The typesetting and layout support the message,
+a much more serious experience. The typesetting and layout support the message.
 The fact that they have physical reality makes them immediately feel more
 valuable. It communicates that you need to make time and space, and invest focus 
 on the contents. 
@@ -63,13 +63,13 @@ library, and leafing through the books within.
 But is that not a disgustingly reactionary attempt to bring back the "good old
 library"? Not only a hopeless one, but also a misguided one. Like the
 "calculator apps" that you can get for some computers, with rendered tiny
-plastic buttons and a 7-segmetn LCD display, it would with great effort produce
-something inferior on a much more capable foundation. A real computer,
+plastic buttons and a 7-segment LCD display. It would with great effort produce
+something inferior on a foundation that is capable of much more. A real computer,
 connected to all other computers and thereby people in the world, showing you
-pictures of dead-tree, linear books? 
+pictures of dead-tree, linear books? Seriously?
 
 So if you have a crazy, post-modern idea of how to do away with the books or the
-representation of them in shelve9, yet still preserve the increase in
+representation of them in shelve9, yet still preserve the aim of increasing
 understanding and discussion, then please let me know!
 
 ## Using shelve9
