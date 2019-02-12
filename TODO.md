@@ -1,4 +1,4 @@
 # shelve9 Todo List
 
-- figure out what to do
-- put it here
+- build a small "hello world" REST service in modern C++ to show that it can be done
+- make a more complete plan here
