@@ -1,0 +1,94 @@
+body { 
+    background: #EEEEEE;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+div.menu {
+    background-color: #EEEEEE;
+    padding: .5em;
+    margin: .5em;
+    border-radius: .5em;
+    border: 1pt solid black;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: .75em;
+    opacity: .5;
+    z-index: -1;
+    height: 1.2em;
+}
+
+div.back {
+    background-color: #EEEEEE;
+    padding: .5em;
+    margin: .5em;
+    border-radius: 1.2em;
+    border: 1pt solid black;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: .75em;
+    opacity: .5;
+    z-index: -1;
+    height: 1.2em;
+    width: 1.2em;
+}
+
+div.shelve {
+    background-color: #CCCCCC;
+    position: absolute;
+    height: 2em;
+    line-height: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: bold;
+    border: 1pt solid black;
+    color: black;
+    opacity: .5;
+    font-family: sans-serif;
+}
+
+div.book {
+    position: absolute;
+    padding: .25em;
+    color: black;
+  writing-mode: sideways-lr;
+  -webkit-writing-mode: sideways-lr;
+  -ms-writing-mode: sideways-lr;
+}
+
+div.book-description {
+    margin-top: 6em;
+    position: absolute;
+}
+
+div.book-image {
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 2em;
+}
+
+div.author-head {
+    font-size: 140%;
+}
+
+div.title-head {
+    font-size: 160%;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+div.comment {
+    width: calc(33% - 3em);
+    display: inline-block;
+    padding: 1.5em;
+    vertical-align: top;
+}
+
+div.sig {
+    font-style:italic;
+    margin-top: .5em;
+    float: right;
+}
