@@ -7,9 +7,9 @@
   </head>
   <body style="max-width: 100em; min-width:64em;">
     <a href="test">
-    <div class="back">&lt;-</div>
+    <div class="back">Back</div>
     </a>
-    <div class="menu">Settings | Login</div>
+    <div class="menu">Edit | Settings | Logout</div>
 
     <div class="book-description">
     <div class="book-image"><img src="cover.jpg"/></div>
@@ -33,7 +33,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-<div class="sig">Robert Lemmen</div>
+<div class="sig">Robert Lemmen, 16.3.2019</div>
     </div>
     <div class="comment">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
@@ -42,7 +42,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
 dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 sunt in culpa qui officia deserunt mollit anim id est laborum
-<div class="sig">Some Dude</div>
+<div class="sig">Some Dude, 27.4.2019</div>
     </div>
     <div class="comment">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
@@ -51,7 +51,12 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
 dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 sunt in culpa qui officia deserunt mollit anim id est laborum
-<div class="sig">Some Dude</div>
+<div class="sig">Some Dude, 30.6.2019</div>
+    </div>
+    <div class="comment">
+    <div class="new-comment">
+    Add Comment
+    </div>
     </div>
     </div>
   </body>

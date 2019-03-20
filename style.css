@@ -24,16 +24,33 @@ div.back {
     background-color: #EEEEEE;
     padding: .5em;
     margin: .5em;
-    border-radius: 1.2em;
+    border-radius: .5em;
     border: 1pt solid black;
     display: inline-block;
     position: absolute;
     left: 0;
     top: .75em;
     opacity: .5;
+    color: black;
     z-index: -1;
     height: 1.2em;
-    width: 1.2em;
+}
+
+div.new-comment {
+    background-color: #EEEEEE;
+    padding: .5em;
+    margin: .5em;
+    border-radius: .5em;
+    border: 1pt solid black;
+    display: inline-block;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    opacity: .5;
+    color: black;
+    z-index: -1;
+    height: 1.2em;
+    float: right;
 }
 
 div.shelve {
@@ -47,13 +64,13 @@ div.shelve {
     border: 1pt solid black;
     color: black;
     opacity: .5;
-    font-family: sans-serif;
 }
 
 div.book {
     position: absolute;
     padding: .25em;
     color: black;
+    background-size:100% 100%;
   writing-mode: sideways-lr;
   -webkit-writing-mode: sideways-lr;
   -ms-writing-mode: sideways-lr;

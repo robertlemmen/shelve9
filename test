@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body style="max-width: 100em; min-width:64em;">
-    <div class="menu">Settings | Login</div>
+  <body style="width: 100em;">
+    <div class="menu">Edit | Settings | Logout</div>
 
     <div class="shelve" style="width: 64em; left: 0em; top: 28em; text-align: right">Languages</div>
 
     <a href="book1">
-    <div class="book" style="width: 4.5em; height: 20.5em; background-color: #AA3300; left: 2em; top: 7em">
-        Max Mustermann<br/><b>An incredible Theory</b>
+    <div class="book" style="width: 4.5em; height: 20.5em;
+background-image:url(spine1.jpeg); left: 2em; top: 7em">
     </div>
     </a>
     <div class="book" style="width: 2.5em; height: 24.5em; background-color: #227711; left: 7em; top: 3em">
@@ -21,7 +21,8 @@
     
     <div class="shelve" style="width: 44em; right: 0em; top: 64em; text-align: left">Philosophy</div>
 
-    <div class="book" style="width: 4.5em; height: 20.5em; background-color: #770055; right: 2em; top: 43em">
+    <div class="book" style="width: 4.5em; height: 20.5em; background-image:
+linear-gradient(white, lightblue); right: 2em; top: 43em">
         Max Mustermann<br/><b>An incredible Theory</b>
     </div>
     <div class="book" style="width: 2.5em; height: 24.5em; background-color: #226633; right: 7em; top: 39em">
@@ -33,7 +34,8 @@
     <div class="book" style="width: 4.5em; height: 20.5em; background-color: #770055; left: 2em; top: 43em">
         Max Mustermann<br/><b>An incredible Theory</b>
     </div>
-    <div class="book" style="width: 2.5em; height: 24.5em; background-color: #226633; left: 7em; top: 39em">
+    <div class="book" style="width: 2.5em; height: 24.5em; background-color:
+#226633; color:white; left: 7em; top: 39em">
         Max Mustermann<br/><b>An incredible Theory</b>
     </div>
 
