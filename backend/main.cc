@@ -7,6 +7,7 @@
 
 #include "config.h"
 #include "server.h"
+#include "api_svc.h"
 
 using namespace std;
 
@@ -47,6 +48,7 @@ int main(int argc, char **argv) {
 
     // set up and main subcomponents
     server srv(ios, cfg);
+    api_svc svc(srv, cfg);
   
     sigs.add(SIGINT);
     sigs.add(SIGTERM);

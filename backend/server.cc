@@ -32,6 +32,8 @@ class server_impl {
         server_impl(io_service &ios, config &conf);
         ~server_impl();
 
+        void add_handler(const std::string &path, server::handler_type handler);
+
         void start();
         void stop();
     private:
@@ -105,6 +107,10 @@ server_impl::~server_impl() {
     srv_.stop(true);
 }
 
+void server_impl::add_handler(const std::string &path, server::handler_type handler) {
+    srv_.add_resource(path, handler);
+}
+
 void server_impl::start() {
     BOOST_LOG_TRIVIAL(debug) << "HTTP server starting...";
     try {
@@ -137,4 +143,8 @@ void server::start() {
 
 void server::stop() {
     pimpl_->stop();
+}
+
+void server::add_handler(const std::string &path, server::handler_type handler) {
+    pimpl_->add_handler(path, handler);
 }
