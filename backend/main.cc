@@ -7,7 +7,9 @@
 
 #include "config.h"
 #include "server.h"
+#include "repo.h"
 #include "api_svc.h"
+#include "version.h"
 
 using namespace std;
 
@@ -33,7 +35,7 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    BOOST_LOG_TRIVIAL(info) << "SHELVE9 " << VERSION;
+    BOOST_LOG_TRIVIAL(info) << "SHELVE9 " << shelve9_version();
 
     cfg.dump_config();
 
@@ -48,6 +50,7 @@ int main(int argc, char **argv) {
 
     // set up and main subcomponents
     server srv(ios, cfg);
+    repository repo(cfg);
     api_svc svc(srv, cfg);
   
     sigs.add(SIGINT);

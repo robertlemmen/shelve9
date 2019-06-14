@@ -1,0 +1,7 @@
+#include "version.h"
+
+using namespace std;
+
+string shelve9_version() {
+    return "%VERSION_STRING%";
+}

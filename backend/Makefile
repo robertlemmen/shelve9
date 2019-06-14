@@ -6,23 +6,27 @@ WARN?=-Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy \
 	-Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wundef \
 	-Wno-unused-parameter -Wreturn-type
 CXXFLAGS?=-g $(WARN) -std=c++17 \
-	-DVERSION=\"$(VERSION)\" \
 	-DBOOST_ALL_DYN_LINK \
-	$(shell pkg-config --cflags openssl pion yaml-cpp jsoncpp)
+	$(shell pkg-config --cflags openssl pion yaml-cpp jsoncpp libpqxx)
 CXXINCFLAGS?=-I.
 LDFLAGS?=-pthread -lboost_thread -lboost_log \
 	-lboost_log_setup -lboost_program_options \
 	-lboost_system -lboost_filesystem \
-	-llmdb \
-	$(shell pkg-config --libs openssl pion yaml-cpp jsoncpp)
+	$(shell pkg-config --libs openssl pion yaml-cpp jsoncpp libpqxx)
 CXX?=g++
 
-VERSION:=$(shell git describe --long --tags --dirty --always --match 'v[0-9].*' || echo "unknown")
+GIT_HASH := $(shell git log -1 --pretty=format:g%h)
+GIT_DIRTY := $(shell git describe --all --long --dirty | grep -q dirty && echo 'dirty' || true)
+GIT_TAG := $(shell git describe --exact-match 2>/dev/null || true)
+VERSION_STRING := $(if $(GIT_TAG),$(GIT_TAG),$(GIT_HASH))$(if $(GIT_DIRTY), (dirty),)
+
 OBJECTS=$(subst .cc,.o,$(shell ls *.cc))
 
-$(TARGET): $(OBJECTS) 
+$(TARGET): $(OBJECTS)
+	@cat version.cc.template | sed -e 's/\%VERSION_STRING\%/$(VERSION_STRING)/' > version.cc
 	@echo "Linking $@..."
-	@$(CXX) -o $@ $^ $(LDFLAGS)
+	@$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $@ $^ version.cc
+	@rm -f version.cc
 
 %.o: %.cc
 	@echo "Compiling $<..."
@@ -33,6 +37,7 @@ $(TARGET): $(OBJECTS)
 
 clean:
 	@echo "Cleaning..."
+	@rm -f version.cc
 	@rm -f *.o *.d
 	@rm -f $(TARGET)
 

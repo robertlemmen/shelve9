@@ -5,6 +5,8 @@
 #include <boost/log/trivial.hpp>
 #include <yaml-cpp/yaml.h>
 
+#include "version.h"
+
 using namespace std;
 namespace po = boost::program_options;
 
@@ -38,12 +40,12 @@ bool config::setup(int ac, char **av) {
 
     // check if basic command is called
     if (vm_cmdline.count("help")) {
-        cout << "This is STORED, please see the provided documentation for detailed instructions." << endl << endl;
+        cout << "This is SHELVE9, please see the provided documentation for detailed instructions." << endl << endl;
         cout << cmds << endl;
         return false;
     }
     if (vm_cmdline.count("version")) {
-        cout << "STORED " << VERSION << endl << endl;
+        cout << "SHELVE9 " << shelve9_version() << endl << endl;
         return false;
     }
 
