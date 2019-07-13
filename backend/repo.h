@@ -7,6 +7,9 @@ class repository {
     public:
         explicit repository(config &conf);
         virtual ~repository();
+
+        
+        
 };
 
 #endif /* REPO_H */

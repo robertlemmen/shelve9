@@ -8,7 +8,7 @@ class server;
 class api_svc {
     public:
         explicit api_svc(server &srv, config &conf);
-        virtual ~api_svc();;
+        virtual ~api_svc();
 
     private:
         server &srv_;
